@@ -1,8 +1,6 @@
 name: Lks Provinsi
 
-on:
-  path: "./github/workflows/lks-deployment-pipeline.yml"
-  branch: "main"
+on: [push]
 
 env:
   AWS_REGION: us-east-1
