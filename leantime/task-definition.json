@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:339713100585:task-definition/leantime:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:339713100585:task-definition/lks-leantime-td:1",
     "containerDefinitions": [
         {
             "name": "leantime",
-            "image": "339713100585.dkr.ecr.us-east-1.amazonaws.com/lks-gatus",
+            "image": "339713100585.dkr.ecr.us-east-1.amazonaws.com/lks-gatus:latest",
             "cpu": 0,
             "portMappings": [
                 {
@@ -15,60 +15,7 @@
                 }
             ],
             "essential": true,
-            "environment": [
-                {
-                    "name": "LEAN_SESSION_EXPIRATION",
-                    "value": "28800"
-                },
-                {
-                    "name": "LEAN_DB_HOST",
-                    "value": "lks-project-management-cluster.cluster-czukwmiuiqn5.us-east-1.rds.amazonaws.com"
-                },
-                {
-                    "name": "PUID",
-                    "value": "1000"
-                },
-                {
-                    "name": "LEAN_APP_URL",
-                    "value": "http://"
-                },
-                {
-                    "name": "LEAN_DB_USER",
-                    "value": "admin1"
-                },
-                {
-                    "name": "LEAN_APP_DIR",
-                    "value": "/leantime"
-                },
-                {
-                    "name": "LEAN_PORT",
-                    "value": "80808"
-                },
-                {
-                    "name": "LEAN_DB_DATABASES",
-                    "value": "leantime_db"
-                },
-                {
-                    "name": "LEAN_DB_PORT",
-                    "value": "3306"
-                },
-                {
-                    "name": "LEAN_SESSION_PASSWORD",
-                    "value": "lksnganjuk"
-                },
-                {
-                    "name": "LEAN_DEBUG",
-                    "value": "0"
-                },
-                {
-                    "name": "PGID",
-                    "value": "100"
-                },
-                {
-                    "name": "LEAN_SESSION_SECURE",
-                    "value": "false"
-                }
-            ],
+            "environment": [],
             "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
@@ -76,7 +23,7 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/leantime",
+                    "awslogs-group": "/ecs/lks-leantime-td",
                     "mode": "non-blocking",
                     "awslogs-create-group": "true",
                     "max-buffer-size": "25m",
@@ -88,7 +35,7 @@
             "systemControls": []
         }
     ],
-    "family": "leantime",
+    "family": "lks-leantime-td",
     "taskRoleArn": "arn:aws:iam::339713100585:role/LabRole",
     "executionRoleArn": "arn:aws:iam::339713100585:role/LabRole",
     "networkMode": "awsvpc",
@@ -141,7 +88,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-04-23T02:32:01.696Z",
+    "registeredAt": "2025-04-23T04:35:00.580Z",
     "registeredBy": "arn:aws:sts::339713100585:assumed-role/voclabs/user4030270=DAMAR_DWI_HERLAMBANG_-_KAB._NGANJUK",
     "enableFaultInjection": false,
     "tags": []
