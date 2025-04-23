@@ -4,6 +4,7 @@ alerting:
     token: "<github-token>" # WARN: DO NOT CHANGE THIS LINE
 # FILL IN THE MISSING VALUES ABOVE
 
+
 # FILL IN THE MISSING VALUES BELOW
 endpoints:
   - name: Leantime
