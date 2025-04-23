@@ -89,7 +89,7 @@
         "operatingSystemFamily": "LINUX"
     },
     "registeredAt": "2025-04-23T02:35:23.655Z",
-    "registeredBy": "arn:aws:iam::339713100585:role/LabRol",
+    "registeredBy": "arn:aws:iam::339713100585:role/LabRole",
     "enableFaultInjection": false,
     "tags": []
 }
