@@ -1,48 +1,148 @@
 {
-  // FILL IN THE MISSING VALUES BELOW
-  "family": "",
-  "taskRoleArn": "",
-  "executionRoleArn": "",
-  "networkMode": "",
-  "requiresCompatibilities": ???,
-  "cpu": "",
-  "memory": "",
-  "volumes": [],
-  // FILL IN THE MISSING VALUES ABOVE
-
-  "placementConstraints": [],
-  "runtimePlatform": {
-    "cpuArchitecture": "X86_64",
-    "operatingSystemFamily": "LINUX"
-  },
-  "enableFaultInjection": false,
-
-  "containerDefinitions": [
-    {
-      "name": "leantime",
-      "image": "leantime/leantime:latest",
-      "cpu": 0,
-      "essential": true,
-      "volumesFrom": [],
-      "systemControls": [],
-
-      // FILL IN THE MISSING VALUES BELOW
-      "portMappings": [],
-      "secrets": [],
-      "environment": [],
-      "mountPoints": [],
-      "logConfiguration": {
-        "logDriver": "???",
-        "options": {
-          "awslogs-group": "???",
-          "awslogs-region": "???",
-          "mode": "non-blocking",
-          "awslogs-create-group": "true",
-          "max-buffer-size": "25m",
-          "awslogs-stream-prefix": "ecs"
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:339713100585:task-definition/leantime:1",
+    "containerDefinitions": [
+        {
+            "name": "leantime",
+            "image": "339713100585.dkr.ecr.us-east-1.amazonaws.com/lks-gatus",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "80",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "LEAN_SESSION_EXPIRATION",
+                    "value": "28800"
+                },
+                {
+                    "name": "LEAN_DB_HOST",
+                    "value": "lks-project-management-cluster.cluster-czukwmiuiqn5.us-east-1.rds.amazonaws.com"
+                },
+                {
+                    "name": "PUID",
+                    "value": "1000"
+                },
+                {
+                    "name": "LEAN_APP_URL",
+                    "value": "http://"
+                },
+                {
+                    "name": "LEAN_DB_USER",
+                    "value": "admin1"
+                },
+                {
+                    "name": "LEAN_APP_DIR",
+                    "value": "/leantime"
+                },
+                {
+                    "name": "LEAN_PORT",
+                    "value": "80808"
+                },
+                {
+                    "name": "LEAN_DB_DATABASES",
+                    "value": "leantime_db"
+                },
+                {
+                    "name": "LEAN_DB_PORT",
+                    "value": "3306"
+                },
+                {
+                    "name": "LEAN_SESSION_PASSWORD",
+                    "value": "lksnganjuk"
+                },
+                {
+                    "name": "LEAN_DEBUG",
+                    "value": "0"
+                },
+                {
+                    "name": "PGID",
+                    "value": "100"
+                },
+                {
+                    "name": "LEAN_SESSION_SECURE",
+                    "value": "false"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/leantime",
+                    "mode": "non-blocking",
+                    "awslogs-create-group": "true",
+                    "max-buffer-size": "25m",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
         }
-      }
-      // FILL IN THE MISSING VALUES ABOVE
-    }
-  ]
+    ],
+    "family": "leantime",
+    "taskRoleArn": "arn:aws:iam::339713100585:role/LabRole",
+    "executionRoleArn": "arn:aws:iam::339713100585:role/LabRole",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2025-04-23T02:32:01.696Z",
+    "registeredBy": "arn:aws:sts::339713100585:assumed-role/voclabs/user4030270=DAMAR_DWI_HERLAMBANG_-_KAB._NGANJUK",
+    "enableFaultInjection": false,
+    "tags": []
 }
