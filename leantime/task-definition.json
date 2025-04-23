@@ -1,12 +1,48 @@
 {
-  // FILL IN THE MISSING VALUES BELOW
-  "family": "lks-leantime-td",
-  "taskRoleArn": "arn:aws:iam::339713100585:role/LabRole",
-  "executionRoleArn": "arn:aws:iam::339713100585:role/LabRole",
-  "networkMode": "awsvpc",
-  "volumes": [],
-  "placementConstraints": [],
-  "requiresCompatibilities": [
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:339713100585:task-definition/lks-leantime-td:1",
+    "containerDefinitions": [
+        {
+            "name": "leantime",
+            "image": "339713100585.dkr.ecr.us-east-1.amazonaws.com/lks-gatus:latest",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "80",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/lks-leantime-td",
+                    "mode": "non-blocking",
+                    "awslogs-create-group": "true",
+                    "max-buffer-size": "25m",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "lks-leantime-td",
+    "taskRoleArn": "arn:aws:iam::339713100585:role/LabRole",
+    "executionRoleArn": "arn:aws:iam::339713100585:role/LabRole",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
         {
             "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
         },
@@ -38,38 +74,22 @@
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
-  "cpu": "1024",
-  "memory": "3072",
-  // FILL IN THE MISSING VALUES ABOVE
-
-  "runtimePlatform": {
-    "cpuArchitecture": "X86_64",
-    "operatingSystemFamily": "LINUX"
-  },
-  "enableFaultInjection": false,
-  "containerDefinitions": [
-    {
-      "name": "gatus",
-      "image": "<task-def-image>", // WARN: REMOVE THIS COMMENT AND DO NOT CHANGE THIS LINE
-      "cpu": 0,
-      "essential": true,
-      "volumesFrom": [],
-      "systemControls": [],
-
-      // FILL IN THE MISSING VALUES BELOW
-      "portMappings": [],
-      "logConfiguration": {
-        "logDriver": "awslogs",
-        "options": {
-          "awslogs-group": "/ecs/lks-leantime-td",
-          "awslogs-region": "us-east-1",
-          "mode": "non-blocking",
-          "awslogs-create-group": "true",
-          "max-buffer-size": "25m",
-          "awslogs-stream-prefix": "ecs"
-        }
-      }
-      // FILL IN THE MISSING VALUES ABOVE
-    }
-  ]
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2025-04-23T04:35:00.580Z",
+    "registeredBy": "arn:aws:sts::339713100585:assumed-role/voclabs/user4030270=DAMAR_DWI_HERLAMBANG_-_KAB._NGANJUK",
+    "enableFaultInjection": false,
+    "tags": []
 }
