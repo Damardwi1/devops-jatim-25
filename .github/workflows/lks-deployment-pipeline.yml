@@ -89,5 +89,3 @@ jobs:
           cluster: ${{ env.ecs_cluster }}
           force-new-deployment: true
           run-task-tags: '[{"key": "", "value": ""} , ...]'
-
-          run-task-tags: '[{"key": "", "value": ""} , ...]'
