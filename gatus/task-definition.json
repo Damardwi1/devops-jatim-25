@@ -89,7 +89,7 @@
         "operatingSystemFamily": "LINUX"
     },
     "registeredAt": "2025-04-23T02:35:23.655Z",
-    "registeredBy": "arn:aws:sts::339713100585:assumed-role/voclabs/user4030270=DAMAR_DWI_HERLAMBANG_-_KAB._NGANJUK",
+    "registeredBy": "arn:aws:iam::339713100585:role/LabRol",
     "enableFaultInjection": false,
     "tags": []
 }
