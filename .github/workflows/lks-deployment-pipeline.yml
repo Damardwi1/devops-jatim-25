@@ -1,6 +1,7 @@
 name: Lks Provinsi
 
-on: [push]
+on: 
+  workflow_dispatch: 
 
 env:
   AWS_REGION: us-east-1
