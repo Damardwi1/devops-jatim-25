@@ -11,7 +11,7 @@ endpoints:
     interval:
     conditions:
     alerts:
-      - type: ???
+      - type: slack
         description: "Sensei, Leantime is down! Please check and fix it."
 
   - name: Gatus
@@ -19,6 +19,6 @@ endpoints:
     interval:
     conditions:
     alerts:
-      - type: ???
+      - type: slack
         description: "Sensei, Gatus is down! Please check and fix it."
 # FILL IN THE MISSING VALUES BELOW
