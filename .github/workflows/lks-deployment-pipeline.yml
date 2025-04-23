@@ -1,6 +1,5 @@
-name: Example Gatus' Job (1/2) - Build Gatus
+name: Lks Provinsi
 
-# FILL THE MISSING VALUES BELOW
 on:
   workflow_dispatch: ./github/workflows/lks-deployment-pipeline.yml
 
