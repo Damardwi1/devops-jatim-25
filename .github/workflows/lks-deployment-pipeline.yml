@@ -2,6 +2,7 @@ name: Lks Provinsi
 
 on:
   workflow_dispatch: ./github/workflows/lks-deployment-pipeline.yml
+  branch: main
 
 env:
   AWS_REGION: us-east-1
