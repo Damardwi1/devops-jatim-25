@@ -14,7 +14,7 @@ env:
   GATUS_TASK_DEFINITION: gatus
   ECS_LEANTIME_SERVICE: leantime-service
   LEANTIME_TASK_DEFINITION: leantime
-  GATUS_URL: "${{ secrets.ALB_ENDPOINT }}"
+  GATUS_URL: ${{ secrets.ALB_ENDPOINT }}
 # FILL THE MISSING VALUES ABOVE
 
 permissions:
