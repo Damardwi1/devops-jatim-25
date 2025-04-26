@@ -9,17 +9,21 @@ alerting:
 endpoints:
   - name: Leantime
     url: <leantime-url> # WARN: DO NOT CHANGE THIS LINE
-    interval:
+    interval: 30s
     conditions:
+      - "[STATUS] == 200"
+      - "[RESPONSE_TIME] < 300"
     alerts:
-      - type: slack
+      - type: github
         description: "Sensei, Leantime is down! Please check and fix it."
 
   - name: Gatus
     url: <gatus-url> # WARN: DO NOT CHANGE THIS LINE
-    interval:
+    interval: 1m
     conditions:
+      - "[STATUS] == 200"
+      - "[RESPONSE_TIME] < 300"
     alerts:
-      - type: slack
+      - type: github
         description: "Sensei, Gatus is down! Please check and fix it."
 # FILL IN THE MISSING VALUES BELOW
