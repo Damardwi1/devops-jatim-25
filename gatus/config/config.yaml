@@ -6,6 +6,7 @@ alerting:
 # FILL IN THE MISSING VALUES ABOVE
 
 
+
 # FILL IN THE MISSING VALUES BELOW
 endpoints:
   - name: Leantime
