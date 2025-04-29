@@ -5,7 +5,7 @@ alerting:
 
 endpoints:
   - name: Leantime
-    url: "$LEANTIME_URL"  # Akan diganti dengan sed command
+    url: "<leantime-url>"  # Akan diganti dengan sed command
     interval: 30s
     conditions:
       - "[STATUS] == 200"
@@ -15,7 +15,7 @@ endpoints:
         description: "Sensei, Leantime is down! Please check and fix it."
 
   - name: Gatus
-    url: "$GATUS_URL"  # Akan diganti dengan sed command
+    url: "<gatus-url>"  # Akan diganti dengan sed command
     interval: 1m
     conditions:
       - "[STATUS] == 200"
