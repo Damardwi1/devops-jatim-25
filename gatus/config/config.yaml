@@ -1,7 +1,7 @@
 alerting:
   github:
     repository-url: "https://github.com/Damardwi1/devops-jatim-25"
-    token: "$TOKEN"  # Ini akan diganti oleh sed command di workflow
+    token: "<github-token>"  # Ini akan diganti oleh sed command di workflow
 
 endpoints:
   - name: Leantime
