@@ -1,16 +1,11 @@
-# FILL IN THE MISSING VALUES BELOW
 alerting:
   github:
-  repository-url: "https://github.com/Damardwi1/devops-jatim-25"
-    token: "<github-token>" # WARN: DO NOT CHANGE THIS LINE
-# FILL IN THE MISSING VALUES ABOVE
+    repository-url: "https://github.com/Damardwi1/devops-jatim-25"
+    token: "$TOKEN"  # Ini akan diganti oleh sed command di workflow
 
-
-
-# FILL IN THE MISSING VALUES BELOW
 endpoints:
   - name: Leantime
-    url: <leantime-url> # WARN: DO NOT CHANGE THIS LINE
+    url: "$LEANTIME_URL"  # Akan diganti dengan sed command
     interval: 30s
     conditions:
       - "[STATUS] == 200"
@@ -20,7 +15,7 @@ endpoints:
         description: "Sensei, Leantime is down! Please check and fix it."
 
   - name: Gatus
-    url: <gatus-url> # WARN: DO NOT CHANGE THIS LINE
+    url: "$GATUS_URL"  # Akan diganti dengan sed command
     interval: 1m
     conditions:
       - "[STATUS] == 200"
@@ -28,4 +23,3 @@ endpoints:
     alerts:
       - type: github
         description: "Sensei, Gatus is down! Please check and fix it."
-# FILL IN THE MISSING VALUES BELOW
