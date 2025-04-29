@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:211125631346:task-definition/gatus:5",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:211125631346:task-definition/gatus:12",
     "containerDefinitions": [
         {
             "name": "gatus-app",
@@ -46,7 +46,7 @@
     "taskRoleArn": "arn:aws:iam::211125631346:role/LabRole",
     "executionRoleArn": "arn:aws:iam::211125631346:role/LabRole",
     "networkMode": "awsvpc",
-    "revision": 5,
+    "revision": 12,
     "volumes": [
         {
             "name": "config",
@@ -106,7 +106,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-04-29T01:48:27.531Z",
+    "registeredAt": "2025-04-29T02:45:49.292Z",
     "registeredBy": "arn:aws:sts::211125631346:assumed-role/voclabs/user4014505=105070-117",
     "tags": []
 }
