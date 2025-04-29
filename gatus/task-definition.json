@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:211125631346:task-definition/lks-gatus-app:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:211125631346:task-definition/gatus:1",
     "containerDefinitions": [
         {
-            "name": "gatus",
-            "image": "211125631346.dkr.ecr.us-east-1.amazonaws.com/lks-gatus:latest",
+            "name": "gatus-app",
+            "image": "211125631346.dkr.ecr.us-east-1.amazonaws.com/oss:latest",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "lks-port",
+                    "name": "port",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -23,7 +23,7 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/lks/gatus-app",
+                    "awslogs-group": "/ecs/gatus",
                     "mode": "non-blocking",
                     "awslogs-create-group": "true",
                     "max-buffer-size": "25m",
@@ -35,7 +35,7 @@
             "systemControls": []
         }
     ],
-    "family": "lks-gatus-app",
+    "family": "gatus",
     "taskRoleArn": "arn:aws:iam::211125631346:role/LabRole",
     "executionRoleArn": "arn:aws:iam::211125631346:role/LabRole",
     "networkMode": "awsvpc",
@@ -88,7 +88,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-04-26T23:38:40.922Z",
+    "registeredAt": "2025-04-29T01:05:46.919Z",
     "registeredBy": "arn:aws:sts::211125631346:assumed-role/voclabs/user4014505=105070-117",
     "enableFaultInjection": false,
     "tags": []
