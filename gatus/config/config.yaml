@@ -10,6 +10,8 @@ endpoints:
     conditions:
       - "[STATUS] == 200" 
       - "[RESPONSE_TIME] < 300"
+    client:
+      disable-redirects: true 
     alerts:
       - type: github
         description: "Sensei, Leantime is down! Please check and fix it."
@@ -20,6 +22,8 @@ endpoints:
     conditions:
       - "[STATUS] == 200"
       - "[RESPONSE_TIME] < 500"
+    client:
+      disable-redirects: true 
     alerts:
       - type: github
         description: "Sensei, Gatus is down! Please check and fix it."
