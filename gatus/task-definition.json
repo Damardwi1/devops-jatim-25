@@ -1,46 +1,61 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:211125631346:task-definition/gatus1:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:211125631346:task-definition/gatus:16",
     "containerDefinitions": [
         {
-            "name": "gatus",
+            "name": "gatus-app",
             "image": "211125631346.dkr.ecr.us-east-1.amazonaws.com/oss:latest",
-            "cpu": 0,
+            "cpu": 512,
+            "memory": 1024,
             "portMappings": [
                 {
-                    "name": "8080",
                     "containerPort": 8080,
                     "hostPort": 8080,
-                    "protocol": "tcp",
-                    "appProtocol": "http"
+                    "protocol": "tcp"
                 }
             ],
             "essential": true,
-            "environment": [],
-            "environmentFiles": [],
-            "mountPoints": [],
+            "environment": [
+                {
+                    "name": "GATUS_SERVER_ADDRESS",
+                    "value": ":8080"
+                },
+                {
+                    "name": "GATUS_CONFIG_PATH",
+                    "value": "/config/config.yaml"
+                }
+            ],
+            "mountPoints": [
+                {
+                    "sourceVolume": "config",
+                    "containerPath": "/config"
+                }
+            ],
             "volumesFrom": [],
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/gatus1",
-                    "mode": "non-blocking",
-                    "awslogs-create-group": "true",
-                    "max-buffer-size": "25m",
+                    "awslogs-group": "/ecs/gatus",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
+                }
             },
             "systemControls": []
         }
     ],
-    "family": "gatus1",
+    "family": "gatus",
     "taskRoleArn": "arn:aws:iam::211125631346:role/LabRole",
     "executionRoleArn": "arn:aws:iam::211125631346:role/LabRole",
     "networkMode": "awsvpc",
-    "revision": 1,
-    "volumes": [],
+    "revision": 16,
+    "volumes": [
+        {
+            "name": "config",
+            "efsVolumeConfiguration": {
+                "fileSystemId": "fs-0e9331f99f4253bbd",
+                "rootDirectory": "/"
+            }
+        }
+    ],
     "status": "ACTIVE",
     "requiresAttributes": [
         {
@@ -50,16 +65,22 @@
             "name": "ecs.capability.execution-role-awslogs"
         },
         {
+            "name": "ecs.capability.efsAuth"
+        },
+        {
             "name": "com.amazonaws.ecs.capability.ecr-auth"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
         },
         {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+            "name": "ecs.capability.efs"
         },
         {
             "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.25"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
@@ -69,9 +90,6 @@
         },
         {
             "name": "ecs.capability.task-eni"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
     "placementConstraints": [],
@@ -88,8 +106,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-04-29T03:43:55.739Z",
+    "registeredAt": "2025-04-29T03:48:22.167Z",
     "registeredBy": "arn:aws:sts::211125631346:assumed-role/voclabs/user4014505=105070-117",
-    "enableFaultInjection": false,
     "tags": []
 }
