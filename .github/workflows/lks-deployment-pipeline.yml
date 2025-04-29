@@ -13,7 +13,7 @@ env:
   ECS_LEANTIME_SERVICE: leantime-service
   LEANTIME_TASK_DEFINITION: leantime/task-definition.json
   LEANTIME_URL: "https://${{ secrets.ALB_ENDPOINT }}:80"
-  ECS_GATUS_SERVICE: gatus-service-jpc5gcsu
+  ECS_GATUS_SERVICE: gatus-service-9rno465o
   GATUS_TASK_DEFINITION: gatus/task-definition.json
   GATUS_URL: "https://${{ secrets.ALB_ENDPOINT }}:8080"
 # FILL THE MISSING VALUES ABOVE
